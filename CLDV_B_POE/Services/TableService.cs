@@ -11,7 +11,7 @@ namespace CLDV_B_POE.Services
 
         public TableService(IConfiguration configuration)
         {
-            var connectionString = configuration["AzureStorage:DefaultEndpointsProtocol=https;AccountName=st10332707storageaccount;AccountKey=3h8DMrwa6hj/lmL3aq0RL8XRR+KwcyQGx4Mc+qhrlvnhDCZusbNgX4ZmbJxRDTuQTJI7zcobpvnj+AStjSrfAg==;EndpointSuffix=core.windows.net"];
+            var connectionString = configuration["AzureStorage:ConnectionString"];
             var serviceClient = new TableServiceClient(connectionString);
             _tableClient = serviceClient.GetTableClient("CustomerProfiles");
             _tableClient.CreateIfNotExists();

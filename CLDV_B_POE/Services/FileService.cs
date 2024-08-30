@@ -12,7 +12,7 @@ namespace CLDV_B_POE.Services
 
         public FileService(IConfiguration configuration)
         {
-            _shareServiceClient = new ShareServiceClient(configuration["AzureStorage:DefaultEndpointsProtocol=https;AccountName=st10332707storageaccount;AccountKey=3h8DMrwa6hj/lmL3aq0RL8XRR+KwcyQGx4Mc+qhrlvnhDCZusbNgX4ZmbJxRDTuQTJI7zcobpvnj+AStjSrfAg==;EndpointSuffix=core.windows.net"]);
+            _shareServiceClient = new ShareServiceClient(configuration["AzureStorage:ConnectionString"]);
         }
 
         public async Task UploadFileAsync(string shareName, string fileName, Stream content)
