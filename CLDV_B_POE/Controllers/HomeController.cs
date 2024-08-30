@@ -35,7 +35,7 @@ namespace CLDV_B_POE.Controllers
                 using var stream = file.OpenReadStream();
                 await _blobService.UploadBlobAsync("product-images", file.FileName, stream);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Privacy");
         }
 
         [HttpPost]
@@ -45,14 +45,14 @@ namespace CLDV_B_POE.Controllers
             {
                 await _tableService.AddEntityAsync(profile);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Privacy");
         }
 
         [HttpPost]
         public async Task<IActionResult> ProcessOrder(string orderId)
         {
             await _queueService.SendMessageAsync("order-processing", $"Processing order {orderId}");
-            return RedirectToAction("Index");
+            return RedirectToAction("Privacy");
         }
 
         [HttpPost]
@@ -63,7 +63,7 @@ namespace CLDV_B_POE.Controllers
                 using var stream = file.OpenReadStream();
                 await _fileService.UploadFileAsync("contracts-logs", file.FileName, stream);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Privacy");
         }
 
 

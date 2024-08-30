@@ -1,27 +1,10 @@
-﻿@model CLDV_B_POE.Models.CustomerProfile
+﻿
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<form asp-action="UploadImage" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" />
-    <button type="submit">Upload Image</button>
-</form>
-
-<form asp-action="AddCustomerProfile" method="post">
-    <input type="text" name="FirstName" placeholder="First Name" />
-    <input type="text" name="LastName" placeholder="Last Name" />
-    <input type="email" name="Email" placeholder="Email" />
-    <input type="text" name="PhoneNumber" placeholder="Phone Number" />
-    <button type="submit">Add Profile</button>
-</form>
-
-<form asp-action="ProcessOrder" method="post">
-    <input type="text" name="orderId" placeholder="Order ID" />
-    <button type="submit">Process Order</button>
-</form>
-
-<form asp-action="UploadContract" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" />
-    <button type="submit">Upload Contract</button>
-</form>
+<div class="jumbotron text-center mt-5">
+    <h1 class="display-4">Welcome to the Customer Management Portal!</h1>
+    <p class="lead">This portal allows you to manage customer profiles, process orders, and upload important documents.</p>
+    <hr class="my-4">
+</div>

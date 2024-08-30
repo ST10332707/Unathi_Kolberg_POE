@@ -1,6 +1,82 @@
-﻿@{
+﻿@model CLDV_B_POE.Models.CustomerProfile
+@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Welcome to the Customer Management Portal</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Upload an Image</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Select image file:</label>
+                    <input type="file" name="file" id="file" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Upload Image</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Add a Customer Profile</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="AddCustomerProfile" method="post">
+                <div class="mb-3">
+                    <label for="FirstName" class="form-label">First Name:</label>
+                    <input type="text" name="FirstName" id="FirstName" placeholder="Enter first name" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="LastName" class="form-label">Last Name:</label>
+                    <input type="text" name="LastName" id="LastName" placeholder="Enter last name" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email:</label>
+                    <input type="email" name="Email" id="Email" placeholder="Enter email" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="PhoneNumber" class="form-label">Phone Number:</label>
+                    <input type="text" name="PhoneNumber" id="PhoneNumber" placeholder="Enter phone number" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-success">Add Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Process an Order</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="ProcessOrder" method="post">
+                <div class="mb-3">
+                    <label for="orderId" class="form-label">Order ID:</label>
+                    <input type="text" name="orderId" id="orderId" placeholder="Enter order ID" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-warning">Process Order</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3>Upload a Contract</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="contractFile" class="form-label">Choose a contract file:</label>
+                    <input type="file" name="file" id="contractFile" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Upload Contract</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <p>Use this page to detail your site's privacy policy.</p>
