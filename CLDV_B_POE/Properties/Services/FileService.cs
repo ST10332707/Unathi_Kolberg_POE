@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace CLDV_B_POE.Services
+namespace CLDV_B_POE.Properties.Services
 {
     public class FileService
     {
